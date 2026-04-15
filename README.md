@@ -1,5 +1,10 @@
 # LENS: LLM-Enabled Narrative Synthesis for Mental Health by Aligning Multimodal Sensing with Language Models
 
+Wenxuan Xu\*<sup>1</sup>, Arvind Pillai\*<sup>1</sup>, Subigya Nepal<sup>2</sup>, Amanda C Collins<sup>3</sup>, Daniel M Mackin<sup>1</sup>, Michael V Heinz<sup>1</sup>, Tess Z Griffin<sup>1</sup>, Nicholas C Jacobson<sup>1</sup>, Andrew Campbell<sup>1</sup>
+
+<sup>1</sup> Dartmouth College &nbsp; <sup>2</sup> University of Virginia &nbsp; <sup>3</sup> Massachusetts General Hospital, Harvard Medical School
+<sup>\*Equal contribution</sup>  
+
 :page_with_curl: Read the paper [here](https://arxiv.org/abs/2512.23025)
 
 The author is currently organizing the codebase. More updates are coming in 3–4 weeks.
@@ -7,7 +12,7 @@ The author is currently organizing the codebase. More updates are coming in 3–
 # Abstract
 
 <p align="center">
-  <img src="figures/teaser.png" alt="LENS Teaser" width="800" />
+  <img src="figures/teaser.png" alt="LENS Teaser" width="500" />
 </p>
 
 Multimodal health sensing offers rich behavioral signals for assessing mental health, yet translating these numerical time-series measurements into natural language remains challenging. Current LLMs cannot natively ingest long-duration sensor streams, and paired sensor-text datasets are scarce. To address these challenges, we introduce LENS, a framework that aligns multimodal sensing data with language models to generate clinically grounded mental-health narratives. LENS first constructs a large-scale dataset by transforming Ecological Momentary Assessment (EMA) responses related to depression and anxiety symptoms into natural-language descriptions, yielding over 100,000 sensor-text QA pairs from 258 participants. To enable native time-series integration, we train a patch-level encoder that projects raw sensor signals directly into an LLM's representation space. Our results show that LENS outperforms strong baselines on standard NLP metrics and task-specific measures of symptom-severity accuracy. A user study with 13 mental-health professionals further indicates that LENS-produced narratives are comprehensive and clinically meaningful. Ultimately, our approach advances LLMs as interfaces for health sensing, providing a scalable path toward models that can reason over raw behavioral signals and support downstream clinical decision-making.
