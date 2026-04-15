@@ -3,6 +3,7 @@
 Wenxuan Xu\*<sup>1</sup>, Arvind Pillai\*<sup>1</sup>, Subigya Nepal<sup>2</sup>, Amanda C Collins<sup>3</sup>, Daniel M Mackin<sup>1</sup>, Michael V Heinz<sup>1</sup>, Tess Z Griffin<sup>1</sup>, Nicholas C Jacobson<sup>1</sup>, Andrew Campbell<sup>1</sup>
 
 <sup>1</sup> Dartmouth College &nbsp; <sup>2</sup> University of Virginia &nbsp; <sup>3</sup> Massachusetts General Hospital, Harvard Medical School
+
 <sup>\*Equal contribution</sup>  
 
 :page_with_curl: Read the paper [here](https://arxiv.org/abs/2512.23025)
