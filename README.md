@@ -1,6 +1,6 @@
 # LENS: LLM-Enabled Narrative Synthesis for Mental Health by Aligning Multimodal Sensing with Language Models
 
-:page_with_curl: [Paper](https://arxiv.org/abs/2512.23025)
+:page_with_curl: Read the paper [here](https://arxiv.org/abs/2512.23025)
 
 The author is currently organizing the codebase. More updates are coming in 3–4 weeks.
 
