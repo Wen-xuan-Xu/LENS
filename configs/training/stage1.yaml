@@ -1,0 +1,58 @@
+# LENS — Stage 1: time-series encoder alignment.
+#
+# Trains the patch-based TS encoder + projector to map raw sensor streams into
+# the Qwen2.5 embedding space; the LLM backbone is effectively frozen via the
+# ChatTS-Training encoder-alignment recipe (full finetuning_type, but the
+# alignment stage only the small encoder/projector receives meaningful signal).
+#
+# Run from inside the ChatTS-Training submodule:
+#   cd ChatTS-Training && llamafactory-cli train <this file>
+# (or via lens/training/scripts/train_stage1.sh, which sets the paths below).
+#
+# Placeholders written as ${VAR} are substituted by train_stage1.sh from env
+# vars (envsubst). If you invoke llamafactory-cli directly, replace them by hand.
+
+### model
+model_name_or_path: ${LENS_MODEL_DIR}            # e.g. Qwen/Qwen2.5-14B  (7B variant: Qwen/Qwen2.5-7B)
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: full
+deepspeed: ${LENS_DEEPSPEED}                      # default: configs/training/deepspeed/ds_config_2.json (ZeRO-2)
+
+### dataset  (Stage 1 ratio: align_256 : narrative_dataset : qa_dataset = 0.8 : 0.1 : 0.1)
+# align_256 is pulled automatically from the HF Hub (ChatTSRepo/ChatTS-Training-Dataset)
+# via the hf_hub_url entry in dataset_info.template.json; narrative_dataset / qa_dataset
+# are the LENS-generated local jsonl (make fake-data, or the private study data).
+dataset: align_256,narrative_dataset,qa_dataset
+interleave_probs: 0.8,0.1,0.1
+mix_strategy: interleave_over
+template: chatts
+dataset_dir: ${LENS_DATA_DIR}                     # default: data  (relative to $LENS_CHATTS_DIR, i.e. ChatTS-Training/data)
+cutoff_len: 4000
+overwrite_cache: true
+preprocessing_num_workers: 16
+dataloader_num_workers: 4
+
+### output
+output_dir: ${LENS_OUTPUT_DIR}/lens-stage1
+logging_steps: 1
+save_steps: 100
+plot_loss: true
+overwrite_output_dir: true
+save_only_model: true
+save_safetensors: false
+report_to: none                                   # choices: [none, wandb, tensorboard]
+
+### train
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 32
+learning_rate: 1.0e-5
+num_train_epochs: 1.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.02
+bf16: true
+ddp_timeout: 180000000
+resume_from_checkpoint: null

@@ -1,0 +1,59 @@
+# LENS — LoRA fine-tuning variant.
+#
+# Same Stage-2 data mixture as full SFT, but the Qwen2.5 backbone is frozen and
+# only LoRA adapters (plus the TS encoder, kept trainable / saved) are updated.
+# Adapted from LENS/Sympt2Text/.../Exp4_2/core/train/train_distributed_lora.py
+# (which used a bespoke trainer + ds_config_lora.json) onto the ChatTS-Training /
+# LLaMA-Factory LoRA path so it shares the rest of the LENS training tooling.
+#
+# Run from inside the ChatTS-Training submodule:
+#   cd ChatTS-Training && llamafactory-cli train <this file>
+# (or via lens/training/lora/train_lora.sh, which sets the paths below).
+#
+# ${VAR} placeholders are substituted by train_lora.sh from env vars (envsubst);
+# replace them by hand if you call llamafactory-cli directly.
+
+### model
+model_name_or_path: ${LENS_MODEL_DIR}            # e.g. Qwen/Qwen2.5-14B  (or the Stage-1 checkpoint)
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_rank: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target: all                                  # q/k/v/o + gate/up/down proj
+deepspeed: ${LENS_DEEPSPEED}                       # default: lens/training/lora/ds_config_lora.json (ZeRO-3, no offload)
+
+### dataset  (Stage 2 mixture: narrative_dataset : qa_dataset : ift : align_random = 0.3 : 0.3 : 0.2 : 0.2)
+dataset: narrative_dataset,qa_dataset,ift,align_random
+interleave_probs: 0.3,0.3,0.2,0.2
+mix_strategy: interleave_over
+template: chatts
+dataset_dir: ${LENS_DATA_DIR}                      # default: data  (relative to $LENS_CHATTS_DIR, i.e. ChatTS-Training/data)
+cutoff_len: 4000
+overwrite_cache: true
+preprocessing_num_workers: 16
+dataloader_num_workers: 2
+
+### output
+output_dir: ${LENS_OUTPUT_DIR}/lens-lora
+logging_steps: 2
+save_steps: 200
+plot_loss: true
+overwrite_output_dir: true
+save_only_model: true
+report_to: none                                    # choices: [none, wandb, tensorboard]
+
+### train
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 16
+learning_rate: 5.0e-5
+num_train_epochs: 2.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.02
+bf16: true
+ddp_timeout: 180000000
+resume_from_checkpoint: null

@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lens-mh"
+version = "0.1.0"
+description = "LENS: LLM-Enabled Narrative Synthesis for Mental Health by Aligning Multimodal Sensing with Language Models"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Wenxuan Xu" },
+    { name = "Arvind Pillai" },
+]
+keywords = ["mental-health", "time-series", "llm", "multimodal", "passive-sensing", "ema"]
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "pyyaml>=6.0",
+    "tqdm>=4.65",
+    "datasets>=2.16",
+]
+
+[project.optional-dependencies]
+# Data pipeline: LLM enrichment + multi-agent judge (OpenAI or local SGLang).
+pipeline = [
+    "openai>=1.0",
+    "pydantic>=2.0",
+    "sglang>=0.4 ; platform_system != 'Darwin'",
+]
+# Evaluation: NLP metrics + LLM-as-judge.
+eval = [
+    "openai>=1.0",
+    "pydantic>=2.0",
+    "rouge-score>=0.1.2",
+    "nltk>=3.8",
+    "bert-score>=0.3.13",
+    "sacrebleu>=2.4",
+]
+# Training delegates to the ChatTS-Training submodule (./ChatTS-Training); see lens/training/README.md.
+# Heavy deps (torch, deepspeed, flash-attn) are intentionally not listed.
+dev = [
+    "pytest>=7.4",
+    "ruff>=0.4",
+]
+
+[project.urls]
+Homepage = "https://github.com/Wen-xuan-Xu/LENS"
+Repository = "https://github.com/Wen-xuan-Xu/LENS"
+
+[tool.setuptools.packages.find]
+include = ["lens*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+# E741: "ambiguous variable name l/I/O" — `l` is idiomatic here for stream
+# lengths and `for l in file` line iteration (also matches the upstream ChatTS
+# code we port). Everything else stays on.
+ignore = ["E741"]

@@ -1,0 +1,58 @@
+# LENS — Stage 2: supervised fine-tuning.
+#
+# Full-parameter fine-tune of the Qwen2.5-14B (or 7B) backbone + TS encoder on
+# the EMA-derived datasets. Initialize model_name_or_path from the Stage-1
+# output (the encoder-aligned checkpoint).
+#
+# Run from inside the ChatTS-Training submodule:
+#   cd ChatTS-Training && llamafactory-cli train <this file>
+# (or via lens/training/scripts/train_stage2.sh).
+#
+# Placeholders written as ${VAR} are substituted by train_stage2.sh from env
+# vars (envsubst). If you invoke llamafactory-cli directly, replace them by hand.
+
+### model
+model_name_or_path: ${LENS_MODEL_DIR}            # e.g. ${LENS_OUTPUT_DIR}/lens-stage1
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: full
+deepspeed: ${LENS_DEEPSPEED}                      # default: configs/training/deepspeed/ds_config_3.json (ZeRO-3)
+
+### dataset  (Stage 2 ratio: narrative_dataset : qa_dataset : ift : align_random = 0.3 : 0.3 : 0.2 : 0.2)
+# ift and align_random are pulled automatically from the HF Hub
+# (ChatTSRepo/ChatTS-Training-Dataset) via the hf_hub_url entries in
+# dataset_info.template.json; narrative_dataset / qa_dataset are the
+# LENS-generated local jsonl (make fake-data, or the private study data).
+dataset: narrative_dataset,qa_dataset,ift,align_random
+interleave_probs: 0.3,0.3,0.2,0.2
+mix_strategy: interleave_over
+template: chatts
+dataset_dir: ${LENS_DATA_DIR}                     # default: data  (relative to $LENS_CHATTS_DIR, i.e. ChatTS-Training/data)
+cutoff_len: 4000
+overwrite_cache: true
+preprocessing_num_workers: 16
+dataloader_num_workers: 4
+
+### output
+output_dir: ${LENS_OUTPUT_DIR}/lens-stage2
+logging_steps: 1
+save_steps: 200
+plot_loss: true
+overwrite_output_dir: true
+save_only_model: true
+save_safetensors: false
+report_to: none                                   # choices: [none, wandb, tensorboard]
+
+### train
+per_device_train_batch_size: 4
+gradient_accumulation_steps: 32
+learning_rate: 1.0e-5
+num_train_epochs: 1.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.02
+bf16: true
+ddp_timeout: 180000000
+resume_from_checkpoint: null

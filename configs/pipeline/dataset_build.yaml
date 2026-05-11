@@ -1,0 +1,25 @@
+# Config template for `lens.data_pipeline.dataset_build.build_dataset` on real
+# study data. Fill in the paths to your private artefacts. (No real paths or PHI
+# are committed -- these are placeholders.)
+#
+# Inputs:
+#   csv_path  : filtered_feature_rows.csv produced by lens/feature_engineering/
+#               (one row per EMA, with the ema_Q* answers and the eight raw
+#               time-series columns hr_window, zcr_first, zcr_last, steps_first,
+#               stress_window, gps_lon, gps_lat, unlock_min).
+#   questions_json        : the question bank (item + summary prompts + paraphrases).
+#                           Defaults to lens/data_pipeline/dataset_build/Questions.json.
+#   narrative_label_jsonl : enriched_narratives.jsonl  {uid, ema_timestamp,
+#                           rule_based_narrative, enhanced_narrative}
+#   qa_label_jsonl        : enriched_qas.jsonl  {uid, ema_timestamp,
+#                           question_key, enhanced_answer}
+# Output:
+#   save_root : Arrow DatasetDicts go to {save_root}/narrative_dataset and
+#               {save_root}/qa_dataset (then convert_hf_to_jsonl -> fix_ts_tokens).
+csv_path: /path/to/filtered_feature_rows.csv
+# fallback_root: /path/to/dir/with/ema.csv   # optional; only used if csv_path is missing
+questions_json: lens/data_pipeline/dataset_build/Questions.json
+narrative_label_jsonl: /path/to/enriched_narratives.jsonl
+qa_label_jsonl: /path/to/enriched_qas.jsonl
+save_root: /path/to/output/arrow
+random_seed: 20250903

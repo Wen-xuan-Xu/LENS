@@ -1,0 +1,60 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Envs
+.venv/
+venv/
+env/
+.python-version
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Experiment / run artefacts (never commit)
+wandb/
+runs/
+outputs/
+logs/
+*.log
+triton_cache/
+.cache/
+cache/
+sglang_storage/
+
+# Model weights & large artefacts
+models/
+checkpoints/
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+*.tar.gz
+
+# --- Fake data ---------------------------------------------------------------
+# The repo ships ONLY the generator (data/fake/generate.py) and a short README.
+# Everything else under data/fake/ — raw sensor CSVs, ema.csv, Questions.json,
+# enriched_*.jsonl, the narrative/qa/align_random/ift jsonl datasets, the Arrow
+# intermediates, feature_rows, dataset_info.json, SEED — plus the example sample
+# examples/one_sample_each.jsonl, is materialized deterministically (pinned seed
+# in generate.py) by `make fake-data` and is NOT committed.
+/data/fake/*
+!/data/fake/generate.py
+!/data/fake/README.md
+/examples/one_sample_each.jsonl
+*.arrow
+*.backup
+
+# Secrets — must never be committed
+*.env
+.env.local
+config.local.yaml
+secrets.yaml

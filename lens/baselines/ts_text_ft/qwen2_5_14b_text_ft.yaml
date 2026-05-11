@@ -1,0 +1,56 @@
+# TS-Text-FT baseline — text-only fine-tune of Qwen2.5-14B with LLaMA-Factory.
+#
+# This is the "TS-Text-FT" ablation row: a text-only model (no time-series
+# encoder) trained on the LENS narrative + QA datasets with the raw series fed in
+# as plain text. The key difference vs the LENS encoder runs is `cutoff_len:
+# 20000` (the series-as-text prompts are long; LENS uses ~4000).
+#
+# Fill in the placeholders ($MODEL_DIR / $DATA_ROOT / $OUTPUT_DIR) before running,
+# e.g. via `envsubst < this.yaml > config.yaml` or by editing in place. Register
+# the datasets in your LLaMA-Factory `data/dataset_info.json` first (see README).
+#
+# Run with: llamafactory-cli train qwen2_5_14b_text_ft.yaml   (or run_train.sh)
+
+### model
+model_name_or_path: ${MODEL_DIR}            # e.g. Qwen/Qwen2.5-14B or a local path
+trust_remote_code: true
+flash_attn: fa2
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora                       # paper's text-FT baseline; set to `full` for a full SFT
+lora_rank: 8
+lora_target: all
+deepspeed: ds_config/ds_config_3.json       # path inside your LLaMA-Factory checkout
+
+### dataset
+dataset_dir: ${DATA_ROOT}                   # holds dataset_info.json + narrative_dataset/ qa_dataset/ ...
+dataset: narrative_dataset,qa_dataset
+interleave_probs: "0.5,0.5"
+mix_strategy: interleave_over
+template: qwen                              # plain Qwen/ChatML; the <ts> tokens are stripped, series fed as text
+cutoff_len: 20000                           # long: the series-as-text prompts are large (vs ~4000 for LENS)
+preprocessing_num_workers: 96
+packing: true
+
+### output
+output_dir: ${OUTPUT_DIR}
+overwrite_output_dir: true
+logging_steps: 1
+save_steps: 200
+plot_loss: true
+save_only_model: false
+save_safetensors: false
+report_to: none
+
+### train
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 16
+learning_rate: 1.0e-5
+lr_scheduler_type: cosine
+warmup_ratio: 0.02
+num_train_epochs: 0.0
+max_steps: 200
+bf16: true
+ddp_timeout: 180000000
