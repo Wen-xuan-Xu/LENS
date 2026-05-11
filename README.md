@@ -134,8 +134,7 @@ The LENS-specific launch scripts, YAML configs, and DeepSpeed configs live in
 `align_256` / `align_random` / `ift` are not LENS-generated — they are pulled from
 the Hugging Face Hub at
 [`ChatTSRepo/ChatTS-Training-Dataset`](https://huggingface.co/datasets/ChatTSRepo/ChatTS-Training-Dataset)
-(see `lens/training/dataset_info.template.json`). Model checkpoints (LENS-14B,
-LENS-7B) will be released on the Hugging Face Hub; links will be added here.
+(see `lens/training/dataset_info.template.json`).
 
 ## Citation
 
