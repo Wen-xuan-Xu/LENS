@@ -1,0 +1,33 @@
+LENS — LLM-Enabled Narrative Synthesis for Mental Health
+Copyright 2025 The LENS Authors (Wenxuan Xu, Arvind Pillai, et al.)
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+This product includes software developed as part of, or derived from:
+
+  * ChatTS — https://github.com/NetmanAIOps/ChatTS (Apache-2.0)
+    The time-series alignment dataset and the patch-based encoder design
+    follow ChatTS (Xie et al., 2025).
+
+  * ChatTS-Training — https://github.com/xiezhe-24/ChatTS-Training (Apache-2.0)
+    The two-stage SFT training stack (`chatts` template + time-series encoder
+    integration on top of LLaMA-Factory) is built on ChatTS-Training. It is
+    included here as a git submodule under third_party/ChatTS-Training.
+
+  * LLaMA-Factory — https://github.com/hiyouga/LLaMA-Factory (Apache-2.0)
+    The TS-Text-FT text-only baseline is fine-tuned with LLaMA-Factory.
+
+  * The `align_256`, `align_random`, and `ift` data channels used for
+    encoder alignment and instruction following originate from the ChatTS
+    public release; see third_party/ChatTS-Training and the ChatTS repo for
+    their terms.
+
+Study data: The passive-sensing and EMA data underlying the paper were
+collected under NIH/NIMH award R01MH123482-01 and are governed by IRB and
+funder data-use restrictions. They are NOT included in this repository. Only
+synthetic, schema-faithful fake data (data/fake/) is shipped here. De-identified
+study data is the responsibility of the NIMH NDA archive (https://nda.nih.gov).

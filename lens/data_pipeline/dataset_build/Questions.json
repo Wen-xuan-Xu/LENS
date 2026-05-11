@@ -1,0 +1,292 @@
+[
+    {
+      "question_number": 1,
+      "main_clinical_meaning": "Anhedonia (Interest/Pleasure)",
+      "variants": [
+        "In the past 4 hours, how much has the user shown little interest or pleasure in activities?",
+        "During the last 4 hours, how reduced has the user’s enjoyment of things been?",
+        "Rate the degree to which the user lacked interest in doing things over the past 4 hours.",
+        "Over the previous 4 hours, how diminished has the user’s sense of pleasure been?",
+        "For the past 4 hours, how limited has the user’s interest in daily activities been?",
+        "Across the past 4 hours, how often has the user seemed disinterested in activities?",
+        "In the past 4 hours, how strongly did the user demonstrate loss of interest?",
+        "During the last 4 hours, how apparent was the user’s reduced motivation for activities?",
+        "Rate how much the user displayed a lack of pleasure in the past 4 hours.",
+        "Over the last 4 hours, how noticeable was the user’s lack of enjoyment?"
+      ],
+      "notes": "Slider 0–100."
+    },
+    {
+    "question_number": 2,
+      "main_clinical_meaning": "Depressed Mood",
+      "variants": [
+        "In the past 4 hours, how much has the user appeared down, depressed, or hopeless?",
+        "During the last 4 hours, to what extent has the user displayed signs of depression or hopelessness?",
+        "Rate the severity of the user’s low mood during the past 4 hours.",
+        "Over the past 4 hours, how evident were feelings of sadness or hopelessness in the user?",
+        "For the last 4 hours, how frequently has the user seemed down?",
+        "In the previous 4 hours, how persistent were depressed feelings in the user?",
+        "Across the past 4 hours, how strong was the user’s hopelessness?",
+        "Rate how much the user exhibited depressed mood during the past 4 hours.",
+        "Over the last 4 hours, how often has the user looked or felt depressed?",
+        "During the past 4 hours, how intense were the user’s depressive symptoms?"
+      ],
+      "notes": "Slider 0–100."
+    },
+    {
+      "question_number": 3,
+      "main_clinical_meaning": "Sleep Disturbance",
+      "variants": [
+        "Last night, how much trouble did the user have with sleep?",
+        "How often did the user struggle with sleep last night?",
+        "Rate the severity of the user’s sleep difficulties last night.",
+        "How disrupted was the user’s sleep last night?",
+        "To what extent did the user have trouble falling or staying asleep?",
+        "How often did the user’s sleep appear fragmented or restless?",
+        "Rate how strongly the user experienced poor sleep quality last night.",
+        "How problematic was the user’s sleep last night?",
+        "How evident were the user’s sleep issues last night?",
+        "Rate the user’s level of sleep disturbance last night."
+      ],
+      "notes": "Morning session only. Slider 0–100."
+    },
+    {
+      "question_number": 4,
+      "main_clinical_meaning": "Fatigue / Energy",
+      "variants": [
+        "In the past 4 hours, how tired or low in energy has the user been?",
+        "During the last 4 hours, how much fatigue has the user experienced?",
+        "Rate the user’s level of low energy in the past 4 hours.",
+        "Over the past 4 hours, how often has the user seemed exhausted?",
+        "For the last 4 hours, how limited has the user’s energy been?",
+        "In the previous 4 hours, how strong has the user’s sense of fatigue been?",
+        "Across the past 4 hours, how drained has the user appeared?",
+        "Rate the extent of fatigue in the user over the past 4 hours.",
+        "During the past 4 hours, how much has low energy affected the user?",
+        "Over the last 4 hours, how persistent has the user’s tiredness been?"
+      ],
+      "notes": "Slider 0–100."
+    },
+    {
+      "question_number": 5,
+      "main_clinical_meaning": "Appetite Change",
+      "variants": [
+        "In the past 4 hours, how much has the user shown a poor appetite or overeating?",
+        "During the last 4 hours, to what extent has the user’s appetite been reduced or excessive?",
+        "Rate any appetite disturbance in the user in the past 4 hours.",
+        "Over the past 4 hours, how abnormal has the user’s appetite been?",
+        "For the last 4 hours, how often has the user eaten less or more than usual?",
+        "In the previous 4 hours, how strong were changes in the user’s appetite?",
+        "Across the past 4 hours, how much has the user under- or overeaten?",
+        "Rate the degree of appetite disruption in the user during the past 4 hours.",
+        "During the past 4 hours, how atypical has the user’s eating pattern been?",
+        "Over the last 4 hours, how noticeable were appetite changes in the user?"
+      ],
+      "notes": "Slider 0–100."
+    },
+    {
+      "question_number": 6,
+      "main_clinical_meaning": "Self-worth / Guilt",
+      "variants": [
+        "In the past 4 hours, how much has the user felt bad about themselves?",
+        "During the last 4 hours, to what extent has the user experienced feelings of worthlessness or guilt?",
+        "Rate the intensity of the user’s negative self-evaluation in the past 4 hours.",
+        "Over the past 4 hours, how often has the user engaged in self-critical thoughts?",
+        "For the last 4 hours, how strong were feelings of worthlessness in the user?",
+        "In the previous 4 hours, how much has guilt or self-blame affected the user?",
+        "Across the past 4 hours, how negative were the user’s views of themselves?",
+        "Rate how often the user felt dissatisfied with themselves in the past 4 hours.",
+        "During the past 4 hours, how persistent were the user’s self-critical feelings?",
+        "Over the last 4 hours, how much has the user felt like a failure?"
+      ],
+      "notes": "Slider 0–100."
+    },
+    {
+      "question_number": 7,
+      "main_clinical_meaning": "Concentration",
+      "variants": [
+        "In the past 4 hours, how much trouble has the user had concentrating?",
+        "During the last 4 hours, how difficult has it been for the user to focus on tasks?",
+        "Rate the extent of the user’s concentration problems in the past 4 hours.",
+        "Over the past 4 hours, how often has the user’s mind wandered?",
+        "For the last 4 hours, how hard has it been for the user to sustain attention?",
+        "In the previous 4 hours, how much has distraction interfered with the user’s tasks?",
+        "Across the past 4 hours, how reduced has the user’s ability to focus been?",
+        "Rate the user’s difficulty concentrating during the past 4 hours.",
+        "During the past 4 hours, how persistent were the user’s attention problems?",
+        "Over the last 4 hours, how often has the user lost track of what they were doing?"
+      ],
+      "notes": "Slider 0–100."
+    },
+    {
+      "question_number": 8,
+      "main_clinical_meaning": "Psychomotor Change",
+      "variants": [
+        "In the past 4 hours, how much has the user been moving or speaking more slowly than usual?",
+        "During the last 4 hours, how often has the user appeared unusually fidgety or restless?",
+        "Rate any slowing or agitation observed in the user in the past 4 hours.",
+        "Over the past 4 hours, how noticeable were changes in the user’s movement or speech speed?",
+        "For the last 4 hours, how often has the user seemed physically slowed down?",
+        "In the previous 4 hours, how often has the user looked keyed up or unable to sit still?",
+        "Across the past 4 hours, how strong were changes in the user’s movement or speech pace?",
+        "Rate the degree of motor slowing or agitation in the user during the past 4 hours.",
+        "During the past 4 hours, how much has restlessness or slowing affected the user?",
+        "Over the last 4 hours, how persistent were these movement or speech changes in the user?"
+      ],
+      "notes": "Slider 0–100."
+    },
+    {
+      "question_number": 9,
+      "main_clinical_meaning": "Suicidal Ideation",
+      "variants": [
+        "In the past 4 hours, how often has the user had thoughts of harming themselves or wishing to be dead?",
+        "During the last 4 hours, to what extent has the user reported self-harm or death-related thoughts?",
+        "Rate the presence of suicidal thoughts in the user during the past 4 hours.",
+        "Over the past 4 hours, how strongly has the user thought about not wanting to live?",
+        "For the last 4 hours, how often has the user mentioned self-harm ideas?",
+        "In the previous 4 hours, how much has the user’s thinking involved death or self-harm?",
+        "Across the past 4 hours, how frequent were suicidal thoughts in the user?",
+        "Rate how often the user considered self-harm in the past 4 hours.",
+        "During the past 4 hours, how persistent were the user’s thoughts of death?",
+        "Over the last 4 hours, how intense were the user’s self-harm thoughts?"
+      ],
+      "notes": "Slider 0–100. Trigger safety protocol if >0."
+    },
+    {
+      "question_number": 10,
+      "main_clinical_meaning": "Somatic Discomfort",
+      "variants": [
+        "In the past 4 hours, how much has the user experienced headache, abdominal discomfort, or body aches?",
+        "During the last 4 hours, to what extent has the user experienced physical discomfort?",
+        "Rate the user’s bodily discomfort (headache, stomach discomfort, aches) in the past 4 hours.",
+        "Over the past 4 hours, how strong were any headaches or body aches in the user?",
+        "For the last 4 hours, how often has the user shown signs of stomach discomfort?",
+        "In the previous 4 hours, how noticeable was physical discomfort in the user?",
+        "Across the past 4 hours, how much have pain or aches affected the user?",
+        "Rate the user’s discomfort from headache, abdominal issues, or body aches.",
+        "During the past 4 hours, how persistent was physical discomfort for the user?",
+        "Over the last 4 hours, how often did the user experience aches or pain?"
+      ],
+      "notes": "Slider 0–100."
+    },
+    {
+      "question_number": "11(1)",
+      "main_clinical_meaning": "Attention Check – Interest/Pleasure",
+      "variants": [
+        "In the past 4 hours, has the user had interest or pleasure in doing things?",
+        "During the last 4 hours, to what extent has the user shown enjoyment in activities?",
+        "Over the past 4 hours, how much interest or pleasure has the user demonstrated?",
+        "In the previous 4 hours, how strongly has the user experienced enjoyment in doing things?",
+        "Across the last 4 hours, how often has the user displayed pleasure in activities?",
+        "Rate the user’s level of interest or pleasure in doing things over the past 4 hours.",
+        "In the past 4 hours, how apparent has the user’s enjoyment in activities been?",
+        "During the past 4 hours, how much motivation and pleasure has the user shown?",
+        "How much has the user engaged with interest in activities during the past 4 hours?",
+        "Rate the user’s experience of pleasure in doing things across the past 4 hours."
+      ],
+      "notes": "Attention check variant 1. Slider 0–100."
+    },
+    {
+      "question_number": "11(2)",
+      "main_clinical_meaning": "Attention Check – Energy",
+      "variants": [
+        "In the past 4 hours, how much energy has the user had?",
+        "During the last 4 hours, how energetic has the user appeared?",
+        "Over the past 4 hours, how strongly has the user demonstrated vitality?",
+        "In the previous 4 hours, how often has the user seemed full of energy?",
+        "Across the past 4 hours, how much has the user displayed liveliness?",
+        "Rate the user’s level of energy over the past 4 hours.",
+        "In the past 4 hours, how evident has high energy been in the user?",
+        "During the past 4 hours, how much stamina has the user shown?",
+        "How much vigor has the user displayed during the past 4 hours?",
+        "Rate the user’s overall energetic state across the past 4 hours."
+      ],
+      "notes": "Attention check variant 2. Slider 0–100."
+    },
+    {
+      "question_number": "11(3)",
+      "main_clinical_meaning": "Attention Check – Concentration",
+      "variants": [
+        "In the past 4 hours, how well has the user been able to concentrate?",
+        "During the last 4 hours, how effective has the user’s focus been?",
+        "Over the past 4 hours, how well has the user maintained concentration?",
+        "In the previous 4 hours, how strong has the user’s ability to focus been?",
+        "Across the past 4 hours, how much has the user demonstrated good concentration?",
+        "Rate the user’s ability to sustain attention in the past 4 hours.",
+        "In the past 4 hours, how capable has the user been at concentrating?",
+        "During the past 4 hours, how consistently has the user shown good focus?",
+        "How effective has the user’s concentration been across the past 4 hours?",
+        "Rate the user’s focus and attention level during the last 4 hours."
+      ],
+      "notes": "Attention check variant 3. Slider 0–100."
+    },
+    {
+      "question_number": 12,
+      "main_clinical_meaning": "Anxiety Arousal",
+      "variants": [
+        "In the past 4 hours, how much has the user felt nervous, anxious, or on edge?",
+        "During the last 4 hours, to what extent has the user seemed tense or keyed up?",
+        "Rate the level of anxiety in the user in the past 4 hours.",
+        "Over the past 4 hours, how often has the user appeared on edge?",
+        "For the last 4 hours, how strong were the user’s feelings of nervousness?",
+        "In the previous 4 hours, how persistent was the user’s anxiety?",
+        "Across the past 4 hours, how much has anxiety interfered with the user?",
+        "Rate the intensity of anxiousness in the user during the past 4 hours.",
+        "During the past 4 hours, how frequent were anxious behaviors in the user?",
+        "Over the last 4 hours, how noticeable was the user’s anxiety?"
+      ],
+      "notes": "Slider 0–100."
+    },
+    {
+      "question_number": 13,
+      "main_clinical_meaning": "Uncontrollable Worry",
+      "variants": [
+        "In the past 4 hours, how much has the user been unable to stop or control worrying?",
+        "During the last 4 hours, to what extent has the user’s worry seemed uncontrollable?",
+        "Rate how difficult it has been for the user to control worry in the past 4 hours.",
+        "Over the past 4 hours, how often has the user’s worry seemed unstoppable?",
+        "For the last 4 hours, how persistent was uncontrollable worry in the user?",
+        "In the previous 4 hours, how much has the user’s worry felt out of control?",
+        "Across the past 4 hours, how difficult has it been for the user to reduce worry?",
+        "Rate the degree of uncontrollable worry observed in the user in the past 4 hours.",
+        "During the past 4 hours, how often did worry continue for the user despite effort to stop?",
+        "Over the last 4 hours, how strong was the sense that worry was uncontrollable in the user?"
+      ],
+      "notes": "Slider 0–100."
+    },
+    {
+      "question_number": 14,
+      "main_clinical_meaning": "Negative Event Occurrence",
+      "variants": [
+        "In the past 4 hours, did the user experience a negative event?",
+        "During the last 4 hours, did anything adverse happen to the user?",
+        "Over the past 4 hours, was there a negative experience for the user?",
+        "In the previous 4 hours, did the user encounter a negative situation?",
+        "Across the past 4 hours, did any upsetting event occur for the user?",
+        "For the last 4 hours, did the user have a negative incident?",
+        "During the past 4 hours, did something unpleasant happen to the user?",
+        "Over the last 4 hours, did the user face a negative occurrence?",
+        "In the past 4 hours, was there an adverse event for the user?",
+        "During the last 4 hours, did the user report a negative event?"
+      ],
+      "notes": "Binary Yes/No. If Yes, administer 14a."
+    },
+    {
+      "question_number": "Overall",
+      "main_clinical_meaning": "Summarized Participant State",
+      "variants": [
+        "Please summarize the user’s overall mental and physical state in the past 4 hours, integrating mood, energy, sleep, appetite, concentration, and physical symptoms.",
+        "Based on the responses, provide a brief overview of the use’s psychological and physical wellbeing over the last 4 hours.",
+        "Summarize the user’s emotional, cognitive, and physical condition across the items reported in the past 4 hours.",
+        "Provide a comprehensive narrative of the user’s overall status, combining mood, behavior, and somatic indicators from the past 4 hours.",
+        "Using the collected responses, generate a concise summary of the user’s overall mental and physical state.",
+        "How would the user’s condition over the past 4 hours be described when considering mood, energy, sleep, appetite, concentration, anxiety, and physical discomfort together?",
+        "Summarize the overall presentation of the user, integrating depressive symptoms, anxiety, somatic discomfort, and daily functioning indicators from the past 4 hours.",
+        "Provide an integrated overview of the user’s status in the past 4 hours, linking emotional, cognitive, and physical responses.",
+        "Write a summary statement that reflects the user’s combined mental and physical experiences over the past 4 hours.",
+        "Offer a synthesized description of the user’s state, weaving together mood, energy, anxiety, self-perception, concentration, and bodily symptoms."
+      ],
+      "notes": "Intended for post-hoc analysis or model-generated narrative response that threads across all EMA items. Summaries may be used to capture holistic participant state beyond individual item scores."
+    }
+  ]
+  

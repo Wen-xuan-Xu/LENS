@@ -1,0 +1,49 @@
+{
+  "_comment": "LENS dataset registration for ChatTS-Training / LLaMA-Factory. Copy or merge these entries into third_party/ChatTS-Training/data/dataset_info.json. narrative_dataset / qa_dataset are LENS-generated (run `make fake-data`, or use the private study data) and stay as local file_name paths under third_party/ChatTS-Training/data/; each jsonl row has columns {input, output, timeseries}, where `timeseries` is the list of raw sensor windows in the fixed order [hr_window, zcr_prod, steps_first, stress_window, gps_lon, gps_lat, unlock] (lengths [1440, 480, 240, 240, 24, 24, 240]), one per <ts><ts/> placeholder in `input`. align_256 / align_random / ift come from ChatTS upstream (not the LENS pipeline) and are pulled straight from the HF Hub repo ChatTSRepo/ChatTS-Training-Dataset (https://huggingface.co/datasets/ChatTSRepo/ChatTS-Training-Dataset); LLaMA-Factory downloads them automatically when it sees hf_hub_url (you may need `huggingface-cli login`). In that repo each subset is a subfolder with a single train.jsonl, so we set hf_hub_url to the repo id, `folder` to the subset name, and `split` to train. For a runnable fake-data variant see data/fake/dataset_info.json (it aliases align_256 -> align_random since the synthetic set ships no separate align_256 split).",
+  "narrative_dataset": {
+    "file_name": "narrative_dataset/train.jsonl",
+    "columns": {
+      "prompt": "input",
+      "response": "output",
+      "timeseries": "timeseries"
+    }
+  },
+  "qa_dataset": {
+    "file_name": "qa_dataset/train.jsonl",
+    "columns": {
+      "prompt": "input",
+      "response": "output",
+      "timeseries": "timeseries"
+    }
+  },
+  "align_256": {
+    "hf_hub_url": "ChatTSRepo/ChatTS-Training-Dataset",
+    "folder": "align_256",
+    "split": "train",
+    "columns": {
+      "prompt": "input",
+      "response": "output",
+      "timeseries": "timeseries"
+    }
+  },
+  "align_random": {
+    "hf_hub_url": "ChatTSRepo/ChatTS-Training-Dataset",
+    "folder": "align_random",
+    "split": "train",
+    "columns": {
+      "prompt": "input",
+      "response": "output",
+      "timeseries": "timeseries"
+    }
+  },
+  "ift": {
+    "hf_hub_url": "ChatTSRepo/ChatTS-Training-Dataset",
+    "folder": "ift",
+    "split": "train",
+    "columns": {
+      "prompt": "input",
+      "response": "output",
+      "timeseries": "timeseries"
+    }
+  }
+}

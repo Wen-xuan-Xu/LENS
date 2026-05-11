@@ -1,0 +1,14 @@
+# Smoke config for `lens.data_pipeline.run_pipeline` -- runs offline on the
+# synthetic fake data. Use with `--mock-llm`:
+#   python -m lens.data_pipeline.run_pipeline --config configs/pipeline/smoke.yaml --mock-llm
+data_root: data/fake
+# If feature-engineering has produced it, this is consumed; otherwise the
+# pipeline falls back to data/fake/feature_rows.csv, then synthesizes a minimal
+# stand-in from data/fake/ema.csv.
+feature_rows: data/fake/filtered_feature_rows.csv
+model_name: qwen2.5-14b          # only used without --mock-llm
+sglang_url: http://localhost:30000
+max_records: 0                   # 0 = all (the fake set is tiny anyway)
+n_sampled_qa: 3
+temperature: 0.1
+seed: 20260511

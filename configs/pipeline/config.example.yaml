@@ -1,0 +1,45 @@
+# Example config for the LENS data pipeline -- PLACEHOLDERS ONLY.
+#
+# No API keys or private endpoints are committed. Secrets are read from the
+# environment at runtime; copy this file to `config.yaml` (gitignored) and/or
+# export the variables below before running the LLM-backed stages.
+#
+#   export OPENAI_API_KEY=sk-...                  # OpenAI-backed evaluation / baselines
+#   export LENS_JUDGE_QWEN_PATH=Qwen/Qwen2.5-7B-Instruct
+#   export LENS_JUDGE_LLAMA_PATH=meta-llama/Llama-3.1-8B-Instruct
+#   export LENS_JUDGE_MISTRAL_PATH=mistralai/Mistral-7B-Instruct-v0.3
+
+openai:
+  # The API key is intentionally NOT stored here. It is read from the
+  # OPENAI_API_KEY environment variable. (Used by lens/eval and the TS-Text /
+  # TS-Image baselines, e.g. for the gpt-4.1-mini LLM-as-judge.)
+  api_key_env: OPENAI_API_KEY
+  model_name: gpt-4.1-mini
+  temperature: 0.2
+  max_tokens: 600
+  use_json_mode: true
+
+# Local LLM rewriting (template enrichment) -- served via SGLang's
+# OpenAI-compatible API. The model in the paper is Qwen2.5-14B-Instruct.
+enrichment:
+  model_name: qwen2.5-14b
+  sglang_url: http://localhost:30000
+  max_tokens: 256
+  temperature: 0.1
+  max_workers: 16
+
+# Multi-agent LLM-as-a-judge ensemble (model id/path + service URL per model
+# come from the LENS_JUDGE_* env vars; see lens/data_pipeline/llm_evaluation/judge_config.py).
+judge:
+  pass_threshold: 20          # PASS if combined score (out of 25) >= this
+  voting_method: weighted_median
+  batch_size: 16
+  temperature: 0.1
+
+retry_settings:
+  max_retries: 3
+  retry_delay_seconds: 10
+
+logging:
+  level: INFO
+  format: "%(asctime)s - %(levelname)s - %(module)s - %(message)s"

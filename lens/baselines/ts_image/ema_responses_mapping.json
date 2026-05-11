@@ -1,0 +1,39 @@
+{
+  "_note": "SYNTHETIC stub showing the schema only. The real EMA-responses mapping is NOT distributed (NIMH/IRB-restricted). Regenerate with: python -m lens.baselines.ts_image.extract_ema_responses --output ema_responses_mapping.json",
+  "narrative": [
+    {
+      "uid": "fake_0001@demo",
+      "ema_timestamp": "2026-05-04 15:11:07",
+      "dataset_type": "narrative",
+      "test_index": 0,
+      "plot_file": "narrative_test_idx0_uid_fake_0001@demo.png",
+      "output": "[SYNTHETIC fake narrative — not derived from real data]",
+      "ema_responses": {
+        "ema_Q1": 35.0, "ema_Q2": 32.0, "ema_Q3": null, "ema_Q4": 65.0, "ema_Q5": 0.0,
+        "ema_Q6": 0.0, "ema_Q7": 32.0, "ema_Q8": 0.0, "ema_Q9": 0.0, "ema_Q10": 0.0,
+        "ema_Q11(0)": null, "ema_Q11(1)": 34.0, "ema_Q11(2)": null, "ema_Q12": 45.0,
+        "ema_Q13": 15.0, "ema_Q14": "No"
+      },
+      "rule_based_narrative": "The user sometimes had little interest or pleasure in doing things. [SYNTHETIC]",
+      "enhanced_narrative": "[SYNTHETIC fake narrative — not derived from real data]"
+    }
+  ],
+  "qa": [
+    {
+      "uid": "fake_0001@demo",
+      "ema_timestamp": "2026-05-04 15:11:07",
+      "dataset_type": "qa",
+      "test_index": 0,
+      "plot_file": "qa_test_idx0_uid_fake_0001@demo.png",
+      "output": "[SYNTHETIC fake answer — not real data]",
+      "ema_responses": {"ema_Q4": 65.0},
+      "rule_based_answer": "The user often felt tired or had little energy. [SYNTHETIC]",
+      "enhanced_answer": "[SYNTHETIC fake answer — not real data]"
+    }
+  ],
+  "metadata": {
+    "successfully_extracted_narrative": 1,
+    "successfully_extracted_qa": 1,
+    "ema_columns": ["ema_Q1","ema_Q2","ema_Q3","ema_Q4","ema_Q5","ema_Q6","ema_Q7","ema_Q8","ema_Q9","ema_Q10","ema_Q11(0)","ema_Q11(1)","ema_Q11(2)","ema_Q12","ema_Q13","ema_Q14"]
+  }
+}

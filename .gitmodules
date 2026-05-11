@@ -1,0 +1,3 @@
+[submodule "third_party/ChatTS-Training"]
+	path = third_party/ChatTS-Training
+	url = https://github.com/xiezhe-24/ChatTS-Training.git

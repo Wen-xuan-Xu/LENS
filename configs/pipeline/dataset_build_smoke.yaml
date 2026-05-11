@@ -1,0 +1,14 @@
+# Smoke config for `lens.data_pipeline.dataset_build.build_dataset` -- builds
+# the narrative + QA Arrow DatasetDicts from the synthetic fake data.
+#   python -m lens.data_pipeline.dataset_build.build_dataset --config configs/pipeline/dataset_build_smoke.yaml
+#
+# Consumes data/fake/filtered_feature_rows.csv if present (produced by the
+# feature-engineering subpackage or by run_pipeline's fallback); otherwise a
+# minimal stand-in is synthesized from data/fake/ema.csv + the enriched JSONLs.
+csv_path: data/fake/filtered_feature_rows.csv
+fallback_root: data/fake
+questions_json: data/fake/Questions.json
+narrative_label_jsonl: data/fake/enriched_narratives.jsonl
+qa_label_jsonl: data/fake/enriched_qas.jsonl
+save_root: data/fake/arrow            # Arrow datasets -> data/fake/arrow/{narrative_dataset,qa_dataset}
+random_seed: 20250903
