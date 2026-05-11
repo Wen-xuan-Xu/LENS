@@ -6,7 +6,7 @@ Wenxuan Xu\*<sup>1</sup>, Arvind Pillai\*<sup>1</sup>, Subigya Nepal<sup>2</sup>
 
 \*Equal contribution
 
-:page_with_curl: Read the paper [here](https://arxiv.org/abs/2512.23025)
+:page_with_curl: Paper: [arXiv:2512.23025](https://arxiv.org/abs/2512.23025) &nbsp;·&nbsp; :hugs: Model: [Gilfoyle727/lens](https://huggingface.co/Gilfoyle727/lens) (LENS-14B)
 
 <p align="center">
   <img src="figures/teaser.png" alt="LENS Teaser" width="500" />
@@ -134,8 +134,10 @@ The LENS-specific launch scripts, YAML configs, and DeepSpeed configs live in
 `align_256` / `align_random` / `ift` are not LENS-generated — they are pulled from
 the Hugging Face Hub at
 [`ChatTSRepo/ChatTS-Training-Dataset`](https://huggingface.co/datasets/ChatTSRepo/ChatTS-Training-Dataset)
-(see `lens/training/dataset_info.template.json`). Model checkpoints (LENS-14B,
-LENS-7B) will be released on the Hugging Face Hub; links will be added here.
+(see `lens/training/dataset_info.template.json`). The **LENS-14B** checkpoint is
+on the Hugging Face Hub: [`Gilfoyle727/lens`](https://huggingface.co/Gilfoyle727/lens)
+(load with `trust_remote_code=True` — see the model card and `lens/eval/inference/hf_inference.py`).
+LENS-7B to follow.
 
 ## Citation
 
