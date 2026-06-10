@@ -54,9 +54,10 @@ state. It has two parts:
 The passive-sensing and EMA data underlying the paper were collected under an
 NIH/NIMH award (R01MH123482-01) and are governed by IRB and funder data-use
 restrictions — **they are not distributed in this repository.** The de-identified
-study data is expected to become available through the
-[NIMH Data Archive (NDA)](https://nda.nih.gov) **around the end of 2026**;
-researchers will request access there via a Data Use Certification.
+study data is available through the
+**[NIMH Data Archive (NDA), Collection 3634](https://nda.nih.gov/edit_collection.html?id=3634)**
+(DOI: [10.15154/nt2p-pb72](https://doi.org/10.15154/nt2p-pb72));
+researchers must submit a Data Use Certification (DUC) to request access.
 
 To keep the code runnable in the meantime, this repo ships **only a deterministic
 synthetic-data generator** — `data/fake/generate.py` (pinned seed). Run
